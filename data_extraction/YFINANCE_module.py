@@ -20,8 +20,8 @@ def fetch_YFINANCE(symbol: str, start: str, end: str, frequency: str):
 # (!!!) For better readibility we drop second level index, in this case the ticker (panel data for single stocks will be handle differently)
     if isinstance(data.columns, pd.MultiIndex):
         data.columns = data.columns.droplevel(1)
-    if frequency == "1h": 
-        data = data[["Datetime", "Open", "Close", "High", "Low", "Volume"]]
-    else:
-        data = data[["Date", "Open", "Close", "High", "Low", "Volume"]]
+#    if frequency == "1h": 
+#        data = data[["Datetime", "Open", "Close", "High", "Low", "Volume"]]
+#    else:
+#        data = data[["Date", "Open", "Close", "High", "Low", "Volume"]]
     return data
